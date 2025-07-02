@@ -1,0 +1,18 @@
+services:
+  platon-node:
+    build:
+      context: .
+      args:
+        VERSION: ${VERSION}
+    image: platon-node:v${VERSION}
+    container_name: ${NAME}
+    restart: always
+    ports:
+      - "0.0.0.0:${P2P_PORT}:16789/udp"
+      - "0.0.0.0:${P2P_PORT}:16789/tcp"
+      - "127.0.0.1:${RPC_PORT}:6789"
+      - "0.0.0.0:${MONITOR_PORT}:6060"
+    volumes:
+      - ${BASEDIR}/${NAME}/platon-node:/root/platon-node
+      - ${BASEDIR}/${NAME}/keystore:/root/platon_mtool/keystore
+      - ${BASEDIR}/${NAME}/validator:/root/platon_mtool/validator
