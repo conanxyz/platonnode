@@ -1,11 +1,11 @@
-# Platon Node Docker Setup
+# PlatON Node Docker Setup
 
-This project provides a Dockerized setup for running a Platon blockchain node.
+This project provides a Dockerized setup for running a [PlatON]((https://platon.network/) node.
 
 ## Project Structure
-- `docker-compose.yaml`: Docker Compose configuration for running the Platon node container.
-- `Dockerfile`: Builds the Platon node image based on Ubuntu 22.04, installing required dependencies and the Platon binaries.
-- `entrypoint.sh`: Entrypoint script to initialize and start the Platon node.
+- `docker-compose.yaml`: Docker Compose configuration for running the PlatON node container.
+- `Dockerfile`: Builds the PlatON node image based on Ubuntu 22.04, installing required dependencies and the Platon binaries.
+- `entrypoint.sh`: Entrypoint script to initialize and start the PlatON node.
 
 ## Prerequisites
 - [Docker](https://docs.docker.com/get-docker/) (v20+ recommended)
@@ -14,7 +14,7 @@ This project provides a Dockerized setup for running a Platon blockchain node.
 ## Environment Variables
 The following environment variables must be set before running the container:
 
-- `VERSION`: The version of Platon to download and run (e.g., `1.5.0`).
+- `VERSION`: The version of PlatON to download and run (e.g., `1.5.0`).
 - `NAME`: The name for the container and data directory.
 - `P2P_PORT`: The external port to map to the node's P2P port (16789).
 - `RPC_PORT`: The external port to map to the node's RPC port (6789).
@@ -41,7 +41,7 @@ export BASEDIR=/data
 docker-compose up --build -d
 ```
 
-This will build the Docker image and start the Platon node container in detached mode.
+This will build the Docker image and start the PlatON node container in detached mode.
 
 ### 3. Data Persistence
 
@@ -63,11 +63,11 @@ docker-compose down
 
 ## Entrypoint Logic
 - On first run, the entrypoint script initializes the node keys if not already present.
-- The Platon node is started with HTTP and metrics enabled, using the generated keys.
+- The PlatON node is started with HTTP and metrics enabled, using the generated keys.
 
 ## References
-- [Platon Official Documentation](https://platon.network/)
+- [PlatON Official Documentation](https://platon.network/)
 
 ---
 
-For any issues or questions, please refer to the official Platon documentation or open an issue in this repository. 
+For any issues or questions, please refer to the official PlatON documentation or open an issue in this repository. 
