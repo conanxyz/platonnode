@@ -38,7 +38,7 @@ export BASEDIR=/data
 ### 2. Build and Start the Node
 
 ```sh
-docker-compose up --build -d
+docker compose up --build -d
 ```
 
 This will build the Docker image and start the PlatON node container in detached mode.
@@ -53,7 +53,7 @@ The following directories will be created under `${BASEDIR}/${NAME}` on the host
 ### 4. Stopping the Node
 
 ```sh
-docker-compose down
+docker compose down
 ```
 
 ## Exposed Ports
